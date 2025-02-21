@@ -1,0 +1,14 @@
+.block {
+    width: 500px;
+    height: 500px;
+    background: black;
+}
+
+/* Приоретет 10 */
+.block-2 {
+    background-color: red;
+}
+/* Приоритет 100 */
+#block {
+    background-color: green;
+} 
