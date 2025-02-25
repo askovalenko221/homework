@@ -1,14 +1,162 @@
-.block {
-    width: 500px;
-    height: 500px;
-    background: black;
+div {
+    color: green;
 }
 
-/* Приоретет 10 */
-.block-2 {
-    background-color: red;
+.block {
+    color: red;
 }
-/* Приоритет 100 */
-#block {
-    background-color: green;
-} 
+
+#id-block {
+    color: #af20af;
+}
+
+[data-example] {
+    color: brown
+}
+
+[data-example=value2] {
+    color: yellow;
+}
+
+.block3,
+.block4,
+.block5 {
+    color: aqua;
+}
+
+div.blue-block {
+    color: blue;
+}
+
+div .orange {
+    color: orange;
+}
+
+.parent>.child {
+    color: #00a2ff;
+}
+
+.parent2 * {
+    color: black;
+}
+
+a:hover {
+    border: 5px solid yellow;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: cornflowerblue;
+}
+
+ul+p {
+    color: #4ec758;
+}
+
+/* ul ~ p { color: #4ec758;} 
+Все парагрофы после ul*/
+
+/* Выбираем атрибут data-info со значением "external" */
+a[data-info~=external] {
+    color: orangered;
+}
+
+/* Выбираем атрибут со значчением "image" */
+a[data-info~="image"] {
+    border: 1px solid #2a0ada;
+}
+
+/* Псевдокласс отрицания not
+div:not(#nogreen) {
+    color: #af20af;
+} */
+
+/* Выберем первую букву параграфа */
+p::first-letter {
+    float: left;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: cursive;
+    padding-right: 2px;
+}
+
+/* Выберем первую строку параграфа */
+p::first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+.ulist {
+    color: black;
+}
+
+/* :nth-child(n) -выбрать элемент списка, начинается с 1 */
+li:nth-child(3) {
+    color: #00a2ff;
+}
+
+li:nth-child(2) {
+    color: #00ff95;
+}
+
+/* li:nth-last-child(n) -выбор элемента с конца списка*/
+/* :nth-of-type(n) -выбор номер списка*/
+/* :nth-last-of-type(n) -выбор списка с конца*/
+/* ul li:first-child -выбрать первый дочерний элемент */
+ul:nth-of-type(2) {
+    border: 2px solid black;
+}
+
+ol:nth-of-type(2) {
+    border: 2px solid #c9a542;
+}
+
+ul li:first-child {
+    color: aquamarine;
+}
+
+ul li:last-child {
+    color: #268f6c;
+}
+
+
+/* ul.ulist2 {
+    width: 200px;
+    background: #292929;
+    color: white;
+    list-style: none;
+    padding-left: 0;
+}
+.ulist2>li {
+    padding: 10px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid #3c3c3c; } */
+div.ulist2 {
+    color: black;
+}
+
+ul.ulist2 {
+    width: 200px;
+    background: #443c3c;
+    color: white;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.ulist2 li {
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #3c3c3c;
+}
+
+ul.ulist2 li:first-child {
+    border-top: none;
+}
+
+ul.ulist2 li:last-child {
+    border-bottom: none;
+}

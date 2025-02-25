@@ -1,0 +1,21 @@
+ul {
+    width: 200px;
+    background: #443c3c;
+    color: white;
+    list-style: none;
+    padding-left: 0;
+}
+
+/* li {
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #3c3c3c;
+}
+
+li:first-child {
+    border-top: none;
+}
+
+li:last-child {
+    border-bottom: none;
+} */
