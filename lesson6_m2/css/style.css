@@ -1,0 +1,31 @@
+.text-block-1 {
+    font-family: "Open Sans", "Arial" sans-serif;
+    /* font-family: "Montserrat", "Arial", sans-serif ; */
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
+    font-weight: 300;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.text-block-2 {
+    text-decoration: line-through;
+}
+
+.text-block-3 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.text-block-4 {
+    /* color: rgb(0, 0, 0); */
+    word-spacing: 30px;
+    text-decoration: wavy overline;
+    text-shadow:  1px 1px 1px #ecaeec;
+}
+
+.text-block-5 {
+    letter-spacing: 5px;
+    text-decoration: double underline
+}

@@ -1,21 +1,31 @@
-ul {
-    width: 200px;
-    background: #443c3c;
-    color: white;
-    list-style: none;
-    padding-left: 0;
+.block {
+    width: 500px;
+    height: 500px;
+    background-color: black;
 }
 
-/* li {
-    padding: 10px;
-    border-bottom: 1px solid #000000;
-    border-top: 1px solid #3c3c3c;
+/* Приоритет 1 + 10 = 11 */
+div.block {
+    background-color: blue;
 }
 
-li:first-child {
-    border-top: none;
-}
-
-li:last-child {
-    border-bottom: none;
+/* Приоритет 100 */
+/* #block {
+    background-color: greenyellow;
 } */
+
+/* Приоритет 10 */
+.block-2 {
+    background-color: red;
+}
+
+/* Приоритет 1 */
+div {
+    background-color: purple;
+}
+
+/* Приоритет 10000 */
+/* div {
+    background-color: purple !important;
+} */
+
