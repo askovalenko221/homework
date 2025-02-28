@@ -21,8 +21,15 @@ body {
 
 
 .block {
-    background: #cf7a7a;
+    overflow: auto;
+    background: url("../img/monkey.jpg") 50% 50% / contain no-repeat;
 
     /* background-color: black; */
-    border-image: url("../");
+    background-image: url("../img/tiger.jpg"), url("../img/monkey.jpg");
+    /* background-image: linear-gradient(90deg,#f58686 40%, #6ac5f0); */
+    /* background-image: radial-gradient(#f58686 40%, #6ac5f0);  */
+    /* background-repeat: no-repeat; */
+    background-position: 50% 50%, 0 0;
+    /* background-attachment: local; */
+    /* background-size: 400px auto; */
 }
