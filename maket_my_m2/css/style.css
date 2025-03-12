@@ -134,16 +134,25 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 30px;
-    margin-left: -14px;
+    /* padding-left: 14px; */
+    margin-left: 14px;
     margin-bottom: -28px;
 }
 
-
 .cards-flex-item {
-    display: flex;
-    flex-flow: column;
-    background: #176BAE;
-    border-radius: 16px;
-    padding: 28px;
+    flex: 0 0 25%;
+    padding: 0 14px;
+    margin-bottom: 28px;
 }
 
+.cards-flex-inner {
+    display: flex;
+    flex-flow: column;
+    box-shadow: 4px 4px 13px 0 rgba(5, 13, 41, 0.76);
+    background: #197cb8;
+    /* background: #176BAE; */
+    border: 2px solid #176bae;
+    border-radius: 16px;
+    padding: 28px;
+
+}
