@@ -1,4 +1,4 @@
-.units {
+/* .units {
   display: flex;
   font-size: 50px;
   gap: 50px;
@@ -44,11 +44,11 @@ p {
 
 .precents__child-quad {
   background-color: #333;
-}
+} */
 
 /* -------------------------------------------- */
 
-.precents__parent-quad {
+/* .precents__parent-quad {
   width: 100px;
   height: 100px;
 }
@@ -59,7 +59,7 @@ p {
 }
 
 .precents {
-  /* font-size: 30px; */
+  font-size: 30px;
 }
 
 .precents__text {
@@ -79,6 +79,32 @@ p {
 .vhw__quad {
   width: 100vw;
   height: 100vh;
+} */
+
+.cube {
+  width: auto;
+  height: 100px;
+  background-color: #96b8b8;
+  border-radius: 10px;
 }
 
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+}
 
+.figura {
+  position: fixed;
+  left: 50%;
+  right: 50px;
+  bottom: 10px;
+  /* z-index: ; */
+}
+
+.circle {
+  position: absolute;
+  bottom: 50px;
+  left: 10%;
+}
