@@ -45,3 +45,11 @@ body {
 }
 
 /* ================== Выполнение дз ниже =================== */
+
+.box__scale {
+    transition-duration: 3s;
+    transition-property: all;
+}
+.box span {
+    transition-delay: 3s;
+}
