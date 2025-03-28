@@ -37,9 +37,9 @@ body {
 
 .title::before{
     left: -150px;
-    background: red;
+    background: #ff0000;
 }
 .title::after{
     right: -150px;
-    background: blue;
+    background: #0000ff;
 }
