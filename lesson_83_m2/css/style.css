@@ -1,5 +1,5 @@
 :root {
-    --accent-color: #f69d43;
+    --accent-color: #f6db43;
     --accent-color-2: #419db4;
     --indent: 2vw;
     --bd-radius: 2vw;
@@ -23,6 +23,7 @@ body {
 .section-3, 
 .section-4 {
     --add-fz: 25px;
+    --add-fz-2: 50px;
 
     max-width: 50vw;
     margin: 0 auto;
@@ -61,11 +62,18 @@ body {
     text-transform: uppercase;
 }
 
+.section-1:hover .title {
+    background: var(--accent-color-2);
+    font-size: var(--add-fz-2);
+}
+
 .section-2:active,
 .section-3:hover{
-    border: 5px solid var(--accent-color-2);
+    border: 10px solid var(--accent-color-2);
 }
+
 
 .section-4 .text:hover {
     color: var(--accent-color-2);
 }
+
