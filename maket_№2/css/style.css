@@ -178,12 +178,19 @@ body {
 
 .main__wrapper {
     display: flex;
-    /* justify-content: space-around; */
-    gap: 126px;
+    align-items: start;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.main__sidebar{
+    position: sticky;
+    top: 5vh;
 }
 
 .main__body {
     width: 100%;
+    max-width: 792px;
 }
 
 .main_gallery {
@@ -198,6 +205,7 @@ body {
     padding: 30px;
     line-height: 20px;
     font-weight: 500;
+    min-height: 60vh;
     /* flex-basis: 282px;
     flex-shrink: 0; */
 }
@@ -249,8 +257,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -288,7 +294,7 @@ body {
 }
 
 
-/* ==================================== */
+/* =================================================== */
 
 
 .products {
@@ -301,27 +307,78 @@ body {
 }
 
 .products__item {
-    border: 1px solid var(--color-seryy);
-    border-top: none;
+    
+    /* position: relative; */
+}
+
+.products__item-img {
     position: relative;
+    padding-bottom: 62%;
+}
+
+.products__item-badge {
+    position: absolute;
+    left: 0%;
+    top: 12.6%;
+    background: #F8FCFF;
+    border-radius: 0 100px 100px 0;
+    padding: 18px 15px;
+    min-width: 33.9%;
+    /* height: 56px; */
+    /* top: 30px; */
+    line-height: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: #1D6FB6;
+
+    /* animation: driving duration timing-function delay iteration-count direction fill-mode; */
+    animation-name: driving;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    /* animation-delay: 3s; */
+}
+
+@keyframes driving {
+    0% {
+        min-width: 33.9%;
+        /* width: 130px; */
+    }
+    66.666% {
+        min-width: 33.9%
+    }
+
+    100% {
+        min-width: 37.3%;
+        /* width: 148px; */
+    }
+}
+
+.products__item-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .products__item-footer {
-    display: flex;
-    height: 116px;
+    /* height: 116px;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    border: 1px solid var(--color-seryy);
+    border-top: none;
+    padding: 30px 15px;
 }
 
-.products__item--banner {
-    display: flex;
-    position: absolute;
-    background: #F8FCFF;
-    border-radius: 0 100px 100px 0;
-    padding: 18px 30px;
-    width: 130px;
-    height: 56px;
-    top: 30px;
-    font-weight: 500;
-    color: #1D6FB6;
+.products__item-button {
+    margin: 0 auto;
+}
+
+/* ====================================================================== */
+
+.footer {
+    
 }
