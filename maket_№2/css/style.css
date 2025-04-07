@@ -1,10 +1,10 @@
 :root {
     --color-bg: #F8FCFF;
-    --color-seryy: #D0DCE7;
+    --color-grey: #D0DCE7;
+    --color-blue: #1D6FB6;
 }
 
 body {
-    /* background: #F8FCFF; */
     background: var(--color-bg);
     font-family: "Montserrat", "Arial", sans-serif;
     /* font-size: 16px; дефолтное значение */
@@ -153,15 +153,15 @@ body {
     font-weight: 500;
     width: 100%;
     font-size: 16px;
-    line-height: 20px;
+    line-height: calc(20 / 16);
     /* text-align: center; */
     align-items: center;
     justify-content: center;
     max-width: 288px;
     height: 56px;
-    background: var(--color-seryy);
+    background: var(--color-grey);
     border-radius: 100px;
-    color: #1D6FB6;
+    color: var(--color-blue);
 }
 
 .button:hover {
@@ -183,7 +183,7 @@ body {
     gap: 30px;
 }
 
-.main__sidebar{
+.main__sidebar {
     position: sticky;
     top: 5vh;
 }
@@ -201,9 +201,8 @@ body {
 .sidebar {
     max-width: 282px;
     width: 100%;
-    border: 2px solid var(--color-seryy);
+    border: 2px solid var(--color-grey);
     padding: 30px;
-    line-height: 20px;
     font-weight: 500;
     min-height: 60vh;
     /* flex-basis: 282px;
@@ -232,8 +231,7 @@ body {
     grid-auto-flow: dense;
     gap: 24px;
     font-weight: 500;
-    line-height: 20px;
-    color: #F8FCFF;
+    color: var(--color-bg);
 }
 
 .gallery__image--big-left {
@@ -268,8 +266,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    /* background: #1D6FB6; */
-    background: #1d6fb6b3;
+    /* background: #var(--color-blue); */
+    background: #83ADD3b3;
     height: 53px;
     font-weight: 500;
     display: flex;
@@ -307,7 +305,7 @@ body {
 }
 
 .products__item {
-    
+
     /* position: relative; */
 }
 
@@ -320,16 +318,15 @@ body {
     position: absolute;
     left: 0%;
     top: 12.6%;
-    background: #F8FCFF;
+    background: var(--color-bg);
     border-radius: 0 100px 100px 0;
     padding: 18px 15px;
     min-width: 33.9%;
     /* height: 56px; */
     /* top: 30px; */
-    line-height: 20px;
     font-weight: 500;
     text-align: center;
-    color: #1D6FB6;
+    color: var(--color-blue);
 
     /* animation: driving duration timing-function delay iteration-count direction fill-mode; */
     animation-name: driving;
@@ -344,6 +341,7 @@ body {
         min-width: 33.9%;
         /* width: 130px; */
     }
+
     66.666% {
         min-width: 33.9%
     }
@@ -368,7 +366,7 @@ body {
     /* height: 116px;
     justify-content: center;
     align-items: center; */
-    border: 1px solid var(--color-seryy);
+    border: 1px solid var(--color-grey);
     border-top: none;
     padding: 30px 15px;
 }
@@ -380,5 +378,16 @@ body {
 /* ====================================================================== */
 
 .footer {
-    
+    padding: 30px 0px;
+    background: #788088;
+    color: var(--color-bg);
+    margin-top: 120px;
+    text-align: center;
+}
+
+.footer__inner {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
