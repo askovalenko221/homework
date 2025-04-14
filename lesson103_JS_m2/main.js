@@ -7,32 +7,47 @@ const user = {
 
 console.log(foo + user.name)
 
-
+///////////////////
 const users = [
     {
         name: 'Pavel',
         age: 21,
-        massa: '54 kg'
+        massa: '54 kg',
         isAdmin: true
-    }
+    },
+    {
+        name: 'Anna',
+        age: 34,
+        massa: '56 kg',
+        isAdmin: true
+    },
+    {
+        name: 'Olga',
+        age: 28,
+        massa: '64 kg',
+        isAdmin: true
+    },
     {
         name: 'Denis',
         age: 29,
-        massa: '70 kg'
+        massa: '70 kg',
         isAdmin: true
-    }
+    },
     {
         name: 'Egor',
         age: 36,
-        massa: '67 kg'
+        massa: '67 kg',
         isAdmin: false
-    }
+    },
 ]
 
-const countUsers = 0
+let countUsers = 0
 for (let i = 0; i < users.length; i++) {
-    if (users[i].isAdmin == true)
-    const countUsers = countUsers +1
+    if (users[i].isAdmin == true) 
+        countUsers +=1
+    
 }
-
 console.log(countUsers)
+
+
+///////////////////
