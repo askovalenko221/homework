@@ -8,10 +8,8 @@
     --color-bg-inputs: #AC907A;
     --color-bg-head: #1F1711;
     --color-text: #312C27;
-}
 
-:root {
-    /* --font-family: "Montserrat", sans-serif; */
+    --font-family: "Montserrat", sans-serif;
     --second-family: "Gabriola", sans-serif;
     --third-family: "Inspiration", sans-serif;
 }
@@ -36,6 +34,7 @@
 /* ========================= */
 .body {
     font-family: "Montserrat", "Arial", sans-serif;
+    /* font-family: var(--font-family); */
     background: var(--color-body);
     /* font-size: 16px; дефолтное значение */
     /* font-weight: 400; Дефолтное значение */
@@ -67,13 +66,13 @@
 /* ++++++++++++++++++++++++++++++++++ */
 .header {
     position: relative;
+    background: url("../img/decor/bg-header.png") 50% 100% / cover no-repeat;
 }
 
-.header__bg-image {
+/* .header__bg-image {
     position: absolute;
-    /* position: relative; */
     z-index: -1;
-}
+} */
 
 .header__top {
     padding-top: 19px;
@@ -82,7 +81,8 @@
 .header__top-inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
+    align-items: flex-end;
 }
 
 .header__logo {
@@ -122,26 +122,52 @@
     opacity: 1
 }
 
-/* ===== */
+/* ======================== */
+.hero{
+    padding: 50px 0 140px;
+}
+
 .hero-inner{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    align-items: flex-end;
 }
 
 .hero__content{
-    display: flex;
-    flex-direction: column;
-    margin-top: 130px;
-    max-width: 519px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* padding-right: 137px; */
+    max-width: 520px;
+    /* width: 100%; */
 }
 
 .hero__info{
     display: flex;
+    flex-wrap: wrap;
     line-height: 1.6;
     color: #B197B2;
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
+.hero__info span{
+    display: flex;
+    align-items: center;
+}
+
+.hero__info span::after{
+    content: '';
+    background-color: #B197B2;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    display: block;
+    margin:0 10px;
+}
+
+.hero__info span:last-child::after{
+    content: none;
+}
 .point{
     background-color: #B197B2;
     width: 4px;
@@ -152,5 +178,20 @@
 .hero__title{
     font-family: var(--second-family);
     font-size: 74px;
-    line-height: 82%;
+    line-height: .82;
+    margin-bottom: 30px;
+}
+
+.hero__text{
+    margin-bottom: 40px;
+    max-width: 358px;
+}
+
+.hero-img{
+    /* padding-left: 137px; */
+}
+
+.hero__img-control{
+    position: relative;
+    
 }
