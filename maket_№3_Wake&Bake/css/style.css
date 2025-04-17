@@ -33,8 +33,8 @@
 
 /* ========================= */
 .body {
-    font-family: "Montserrat", "Arial", sans-serif;
-    /* font-family: var(--font-family); */
+    /* font-family: "Montserrat", "Arial", sans-serif; */
+    font-family: var(--font-family);
     background: var(--color-body);
     /* font-size: 16px; дефолтное значение */
     /* font-weight: 400; Дефолтное значение */
