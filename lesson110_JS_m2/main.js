@@ -7,7 +7,7 @@
 //     })
 // });
 
-const btn = document.querySelector('.btn')
+const btn = document.querySelector('.body--opened-menu')
 btn.addEventListener('click', event => {
     // console.log(event.target)
     // event.target.classList.toggle('red')
