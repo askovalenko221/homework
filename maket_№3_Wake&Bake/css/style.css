@@ -337,12 +337,17 @@
 }
 
 .footer__head-inner {
-    width: 1282px;
-    height: 522px;
+    /* width: 1282px;
+    height: 522px; */
     display: flex;
-    padding: 127px 319px 137px;
-
+    padding: 127px 0 137px;
+    align-items: flex-end;
+    justify-content: space-between;
 }
+
+/* .footer__image{
+    padding-right: 204px;
+} */
 
 .footer__head-inner .cake {
     /* max-width: 574px; */
@@ -350,6 +355,8 @@
 
 .footer__form {
     max-width: 420px;
+    /* width: 100%; */
+    margin-right: ;-right: 204px;
 }
 
 .footer__title {
