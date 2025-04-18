@@ -356,7 +356,7 @@
 .footer__form {
     max-width: 420px;
     /* width: 100%; */
-    margin-right: ;-right: 204px;
+    margin-right: 204px;
 }
 
 .footer__title {
@@ -381,8 +381,9 @@
     background-color: transparent;
 }
 
-.form__checkbox {
+.form__checkbox p {
     font-size: 13px;
+
 }
 
 .form__checkbox-link {
@@ -390,12 +391,13 @@
     text-decoration-skip-ink: auto;
 }
 
-.form__form:last-child {
+/* .form__form:last-child {
     margin-bottom: 20px;
-}
+} */
 
 
 .footer__button {
+    margin-top: 20px;
     /* max-width: 420px; */
 }
 
