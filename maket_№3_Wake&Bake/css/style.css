@@ -617,9 +617,17 @@
     border-radius: 20px;
     padding: 40px 30px;
 }
-
-summary {
-    list-style: none;
+.accordion__title {
+    font-family: var(--second-family);
+    font-size: 42px;
+    line-height: .9;
+    /* list-style: none; */
+    /* margin-bottom: 20px; */
+}
+.accordion__title {
+}
+.accordion:hover{
+    cursor: pointer;
 }
 
 .accordion__inner {
@@ -628,12 +636,7 @@ summary {
     gap: 80px;
 }
 
-.summary__title {
-    font-family: var(--second-family);
-    font-size: 42px;
-    line-height: .9;
-    /* margin-bottom: 20px; */
-}
+
 
 
 .accordion__teoriya {
