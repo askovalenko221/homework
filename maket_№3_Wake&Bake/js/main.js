@@ -1,5 +1,6 @@
 (function () {
-    // const = 
+    // burger-menu
+
     document.addEventListener('click', burgerInit)
 
     function burgerInit(e) {
@@ -19,6 +20,9 @@
         }
         // console.log('работает')
     }
+
+
+    //  modal--po-up
 
     const modal = document.querySelector('.modal')
     const modalButton = document.querySelector('.about__img-button')
@@ -40,66 +44,73 @@
         }
     }
 
-    // document.addEventListener('keydown', event => {
-    //     // console.log(event.code) - узнфть назавние кнопки по нажатию
-    //     // if (event.code === 'Escape') {
-    //     if (event.code === 'Escape' && document.body.classList.contains('body--opened-modal')) {
-    //         // modal.classList.remove('modal--open')
-    //         // modal.classList.toggle('modal--open')
-    //         closeModal()
-    //     }
-
-    })()
 
 
-// const btn = document.querySelector('.about__img-button')
-// const modal = document.querySelector('.modal')
-// const body = document.querySelector('.body')
-// const cancel = document.querySelector('.modal__cancel')
+    // tab-content--show
+    // tab-controls__link--activ
+    // "tab-content" id="tab1"
+
+    //  tabulation + accordion
+
+    const tabControls = document.querySelector('.tab-controls')
+
+    tabControls.addEventListener('click', toggleTab)
+
+    // e==event
+    function toggleTab(e) {
+
+        const tabControl = e.target.closest('.tab-controls__link')
+
+        if (!tabControl) return
+        e.preventDefault()
+        if (tabControl.classList.contains('tab-controls__link--activ')) return
+
+
+        const tabContentID = tabControl.getAttribute('href')
+        const tabContent = document.querySelector(tabContentID)
+        const activeControl = document.querySelector('.tab-controls__link--activ')
+        const activeContent = document.querySelector('.tab-content--show')
+
+        if (activeControl) {
+            activeControl.classList.remove('tab-controls__link--activ')
+        }
+        if (activeContent) {
+            activeContent.classList.remove('tab-content--show')
+        }
+
+
+        tabControl.classList.add('tab-controls__link--activ')
+        tabContent.classList.add('tab-content--show')
+    }
+
+
+    // Аккордеон
+
+    const accordionLists = document.querySelectorAll('.accordion-list');
+
+    accordionLists.forEach(el => {
+
+        el.addEventListener('click', (e) => {
+
+            const accordionControl = e.target.closest('.accordion-list__control');
+            if (!accordionControl) return
+            const accordionItem = accordionControl.parentElement;
+            const accordionContent = accordionControl.nextElementSibling;
+
+            accordionItem.classList.toggle('accordion-list__item--opened');
+
+            if (accordionItem.classList.contains('accordion-list__item--opened')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            } else{
+                accordionContent.style.maxHeight = null;
+            }
+        })
+    })
 
 
 
-// const openModal = () => {
-//     // modal.classList.add('modal--opened')
-//     body.classList.add('body--opened-modal')
-// }
-
-// const closeModal = () => {
-//     // modal.classList.remove('modal--opened')
-//     body.classList.remove('body--opened-modal')
-// }
-
-
-// // btn.addEventListener('click', () => {
-// btn.addEventListener('click', openModal)
-// // modal.classList.add('modal--open')
-// // )}
-
-// modal.addEventListener('click', event => {
-//     const target = event.target
-//     if (target && target.classList.contains('modal') || target.classList.contains('modal__cancel')) {
-//         // modal.classList.remove('modal--open')
-//         closeModal()
-//     }
-// })
-
-// document.addEventListener('keydown', event => {
-//     // console.log(event.code) - узнать название кнопки по нажатию
-//     // if (event.code === 'Escape') {
-//     if (event.code === 'Escape' && modal.classList.contains('modal--open')) {
-//         // modal.classList.remove('modal--open')
-//         // modal.classList.toggle('modal--open')
-//         closeModal()
-//     }
-// })
 
 
 
+})()
 
-// const btn = document.querySelector('.btn')
-// btn.addEventListener('click', event => {
-//     // console.log(event.target)
-//     // event.target.classList.toggle('red')
-//     event.currentTarget.classList.toggle('red')
-
-// })
