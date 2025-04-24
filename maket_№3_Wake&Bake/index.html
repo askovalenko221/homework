@@ -143,22 +143,23 @@
                         </p>
                         <ul class="tab-controls">
                             <li class="tab-controls__item ">
-                                <a class="tab-controls__link tab-controls__link--activ" href="#tab1">Неделя 1</a>
+                                <a class="tab-controls__link tab-controls__link--activ" href="#tab1">Неделя 1</a>
                             </li>
                             <li class="tab-controls__item ">
-                                <a class="tab-controls__link " href="#tab2">Неделя 2</a>
+                                <a class="tab-controls__link " href="#tab2">Неделя 2</a>
                             </li>
                             <li class="tab-controls__item ">
-                                <a class="tab-controls__link " href="#tab3">Неделя 3</a>
+                                <a class="tab-controls__link " href="#tab3">Неделя 3</a>
                             </li>
                             <li class="tab-controls__item ">
-                                <a class="tab-controls__link " href="#tab4">Неделя 4</a>
+                                <a class="tab-controls__link " href="#tab4">Неделя 4</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="tab-content tab-content--show" id="tab1">
+                    <div class="program__tab-content tab-content tab-content--show" id="tab1">
                         <ul class="accordion-list">
-                            <li class="accordion-list__item ">
+                            <li class="accordion-list__item">
+                                <!-- <li class="accordion-list__item accordion-list__item--opened"> -->
                                 <button class="accordion-list__control" type="button">
                                     <h3 class="accordion-list__control-title">
                                         Начало кондитерского пути и создание первого торта
@@ -336,7 +337,7 @@
                         </ul>
                     </div>
 
-                    <div class="tab-content" id="tab2">
+                    <div class="program__tab-content tab-content" id="tab2">
                         <ul class="accordion-list">
                             <li class="accordion-list__item ">
                                 <button class="accordion-list__control" type="button">
@@ -463,7 +464,7 @@
                         </ul>
                     </div>
 
-                    <div class="tab-content" id="tab3">
+                    <div class="program__tab-content tab-content" id="tab3">
                         <ul class="accordion-list">
                             <li class="accordion-list__item ">
                                 <button class="accordion-list__control" type="button">
@@ -571,7 +572,7 @@
                         </ul>
                     </div>
 
-                    <div class="tab-content" id="tab4">
+                    <div class="program__tab-content tab-content" id="tab4">
                         <ul class="accordion-list">
                             <li class="accordion-list__item ">
                                 <button class="accordion-list__control" type="button">
@@ -680,18 +681,34 @@
                         </ul>
                     </div>
 
-                    <div class="program-price_inner">
-                        <div class="program-price_promo">
-                            <div class="program-price_grid">
-                                <div class="program-price__sale">
-                                    <p> Успей получить скидку</p>
-                                    <p>-30%</p>
-                                    <p>до 1 июня</p>
+                    <div class="program__bottom">
+                        <div class="program__action">
+                            <div class="program__discount">
+                                Успей получить скидку
+                                <div class="program__discount-value">
+                                    -30%
                                 </div>
-                                <div class="program-price__pricing"></div>
+                                <span>до 1 июня</span>
                             </div>
+                            <div class="program__price">
+                                <div class="program__price-text">
+                                    Стоимость курса без скидки
+                                </div>
+                                <div class="program__price-value">
+                                    32 000 руб.
+                                </div>
+                            </div>
+                            <div class="program__price">
+                                <div class="program__price-text">
+                                    Стоимость курса со скидкой
+                                </div>
+                                <div class="program__price-value program__price-value--big ">
+                                    22 400 руб.
+                                </div>
+                            </div>
+                            <a class="program__button button" href="#">Оставить заявку</a>
                         </div>
-                        <div class="program-price_img">
+                        <div class="program__price-img">
                             <img src="img/decor/cake.png" alt="">
                         </div>
                     </div>
