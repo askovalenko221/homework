@@ -102,6 +102,16 @@
     }
 
 
+    .gallery__inner{
+        grid-template:none;
+    }
+    .gallery_info{
+        max-width: none;
+    }
+    .gallery__img{
+        display: none;
+    }
+
     /* ========== */
     .footer__inner {
         justify-content: center;

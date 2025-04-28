@@ -127,8 +127,42 @@
     })
 
 
+    // Слайдер в галлереии
 
+    const swiper = new Swiper('.gallery__slider', {
+        // loop: true,
+        slidesPerView: 2,
+        spaceBetween: 15,
+        // If we need pagination
+        pagination: {
+            el: '.gallery__pagination',
+            type: 'fraction'
+        },
 
+        // Navigation arrows
+        navigation: {
+            nextEl: '.gallery__next',
+            prevEl: '.gallery__prev',
+        },
+
+        breakpoints: {
+            // when window width is >= 320px
+            601: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            // when window width is >= 480px
+            801: {
+                slidesPerView: 3,
+                spaceBetween: 32
+            },
+            // when window width is >= 640px
+            1101: {
+                slidesPerView: 4,
+                spaceBetween: 40
+            }
+        }
+    });
 
 
 })()
