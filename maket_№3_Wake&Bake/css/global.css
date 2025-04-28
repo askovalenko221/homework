@@ -55,12 +55,13 @@
     padding: 140px 0;
 }
 
-.main__program {
-    padding-bottom: 145px;
-}
+.main__program,
 .main__gallery {
     padding-bottom: 145px;
 }
+/* .main__gallery {
+    padding-bottom: 145px;
+} */
 
 .container {
     max-width: 1310px;

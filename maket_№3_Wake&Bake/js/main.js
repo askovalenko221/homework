@@ -131,7 +131,7 @@
 
     const swiper = new Swiper('.gallery__slider', {
         // loop: true,
-        slidesPerView: 2,
+        slidesPerView: 1.5,
         spaceBetween: 15,
         // If we need pagination
         pagination: {
