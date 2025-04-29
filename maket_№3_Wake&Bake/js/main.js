@@ -164,6 +164,46 @@
         }
     });
 
+    // Слайдер в отзывах
+
+    // const swipertestimonials = new Swiper('.testimonials__slider', {
+    new Swiper('.testimonials__slider', {
+
+        spaceBetween: 0,
+        slidesPerView: 1.1,
+        centeredSlides: true,
+
+
+        navigation: {
+            nextEl: '.testimonials__next',
+            prevEl: '.testimonials__prev',
+        },
+
+
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+
+            // loop: true
+        },
+
+
+        breakpoints: {
+            // when window width is >= 320px
+            601: {
+
+            },
+            // when window width is >= 480px
+            901: {
+                slidesPerView: 1.5,
+            },
+            // when window width is >= 640px
+            1201: {
+                slidesPerView: 2.1,
+            }
+        }
+
+    });
 
 })()
 
