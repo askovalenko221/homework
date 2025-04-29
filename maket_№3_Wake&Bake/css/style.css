@@ -420,10 +420,11 @@
 .gallery_nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 98px;
     font-family: var(--second-family);
     font-size: 42px;
     line-height: .9;
+    position: relative;
 }
 
 .gallery_nav--mobile {
@@ -485,6 +486,12 @@
 
 .gallery__pagination {
     display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: auto;
+    width: auto;
 }
 
 .gallery__next {
