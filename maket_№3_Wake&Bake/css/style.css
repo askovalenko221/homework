@@ -694,6 +694,10 @@
     justify-content: space-between;
 }
 
+    .main__contact-image{
+        position: relative;
+    }
+
 .form {
     max-width: 420px;
     /* width: 100%; */

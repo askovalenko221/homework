@@ -950,20 +950,29 @@
             <section class="main__contact contact">
                 <div class="container">
                     <div class="main__contact-inner">
-                        <div class="main__contact-image"><img class="cake" src="img/decor/cake-2.png" alt="">
+                        <div class="main__contact-image">
+                            <img src="img/decor/cake-2.png" alt="">
                         </div>
                         <div class="form">
-                            <h3 class="form-title title">Оставить заявку на обучение</h3>
+                            <h2 class="form-title title">Оставить заявку на обучение</h2>
                             <p class="form-text">Заполни контактные данные, и наш менеджер свяжется с тобой в
                                 ближайшее время</p>
-                            <form>
+                            <form contact__form>
                                 <fieldset>
+                                    <label class="modal__form-label field">
+                                        <input class="modal__form-input field__input" type="email" placeholder="E-mail">
+                                        <span>Введите e-mail</span>
+                                    </label>
                                     <input class="form__input" type="text" name="name" placeholder="Имя"> <br>
                                     <input class="form__input" type="number" name="number" id="" placeholder="Телефон">
+                                    
                                     <br>
                                     <input class="form__checkbox" type="checkbox" name="" id="">
-                                    <p> Нажимая на кнопку, вы соглашаетесь с <a class="form__checkbox-link"
-                                            href="#">политикой конфиденциальности</a> </p>
+                                    <p> Нажимая на кнопку, вы соглашаетесь с 
+                                        <a class="form__checkbox-link"
+                                            href="#" target="_blank">
+                                            политикой конфиденциальности
+                                        </a> </p>
                                 </fieldset>
                             </form>
                             <a class="form__button button" href="#">Записаться на курс</a>
