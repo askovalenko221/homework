@@ -672,29 +672,30 @@
 }
 
 
-/* -----main__bottom----- */
+/* -----main__contact----- */
 
-.main__bottom {
+.main__contact {
     padding-bottom: 60px;
 }
 
-.main__bottom {
+.main__contact {
     position: relative;
     background: url("../img/decor/bg-footer.png") 50% 100% / cover no-repeat;
     /* width: 100%; */
 }
 
-.main__bottom-inner {
+.main__contact-inner {
     /* width: 1282px;
     height: 522px; */
     display: flex;
-    padding: 127px 0 137px;
+    gap: 84px;
+    padding: 140px 0 ;
     align-items: flex-end;
     justify-content: space-between;
 }
 
 .form {
-    max-width: 4var(--border-radius);
+    max-width: 420px;
     /* width: 100%; */
     margin-right: 204px;
 }
@@ -712,13 +713,56 @@
 }
 
 .form__input {
-    border: 1px solid var(--color-ac-orange);
+    border: 1px solid #AC907A;
     border-radius: 100px;
     padding: 19px 28px;
-    width: 4var(--border-radius);
+    width: 420px;
     height: 62px;
     margin-bottom: 10px;
     background-color: transparent;
+}
+
+.form__checkbox{
+    appearance: none; /* Убираем стандартный стиль */
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    /* border: 2px solid #ccc; */
+    border: 1.50px solid #AC907A;
+    /* background-color: #f0f0f0;  */
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.form__checkbox:hover{
+    border: 1.50px solid var(--color-ac-orange)
+}
+
+.form__checkbox:checked{
+    background-color: var(--color-ac-orange); /* Цвет фона при выборе */
+    border-color: var(--color-ac-orange);
+}
+.form__checkbox:checked::after{
+    /* content: "✓"; 
+    color: white; 
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    /* background-image: url('data:image/svg+xml;utf8,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.99062 6.15294C3.90311 6.15311 3.81642 6.13601 3.73554 6.1026C3.65466 6.0692 3.58116 6.02015 3.51928 5.95827L0.691285 3.1296C0.627569 3.06815 0.57673 2.99462 0.541735 2.91331C0.506739 2.832 0.488287 2.74454 0.487456 2.65602C0.486625 2.5675 0.503431 2.4797 0.536894 2.39775C0.570356 2.31579 0.619805 2.24133 0.682356 2.17869C0.744906 2.11605 0.819305 2.06649 0.901211 2.03291C0.983117 1.99934 1.07089 1.98241 1.15941 1.98311C1.24793 1.98382 1.33542 2.00215 1.41678 2.03703C1.49814 2.07191 1.57174 2.12264 1.63328 2.18627L3.98995 4.54294L8.23328 0.300937C8.35829 0.175843 8.52787 0.105531 8.70471 0.105469C8.88156 0.105406 9.05119 0.175598 9.17628 0.300604C9.30138 0.425609 9.37169 0.595188 9.37175 0.772035C9.37181 0.948882 9.30162 1.11851 9.17662 1.2436L4.46195 5.95827C4.40007 6.02015 4.32658 6.0692 4.2457 6.1026C4.16481 6.13601 4.07813 6.15311 3.99062 6.15294Z" fill="#FFF9F4"/></svg>'); */
+    background-image: url('../img/icons/check.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 65%;
+    left: 57%;
+    transform: translate(-50%, -50%);
 }
 
 .form__checkbox p {
