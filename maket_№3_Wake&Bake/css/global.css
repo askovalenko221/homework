@@ -10,6 +10,7 @@
     --color-text-head: #1F1711;
     --color-text: #312C27;
 
+
     --font-family: "Montserrat", sans-serif;
     --second-family: "Gabriola", sans-serif;
     --third-family: "Inspiration", sans-serif;
@@ -139,7 +140,7 @@
 
 .modal__cancel:hover path,
 .modal__cancel:hover rect {
-    stroke: #AC907A;
+    stroke: var(--color-bg-inputs);
 }
 
 .modal__img {
@@ -175,7 +176,7 @@
     top: 12px;
     left: 28px;
     font-size: 11px;
-    color: #AC907A;
+    color: var(--color-bg-inputs);
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
@@ -185,7 +186,7 @@
 .field__input {
     display: block;
     width: 100%;
-    border: 1px solid #AC907A;
+    border: 1px solid var(--color-bg-inputs);
     border-radius: 100px;
     padding: 19px 41px 19px 28px;
     background: transparent;
@@ -199,7 +200,7 @@
 }
 
 .field__input::placeholder {
-    color: #AC907A;
+    color: var(--color-bg-inputs);
     transition: var(--transition);
 }
 
