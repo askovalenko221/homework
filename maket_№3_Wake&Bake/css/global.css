@@ -1,4 +1,3 @@
-
 :root {
     --color-ac-orange: #FFA55C;
     --color-ac-pink: #CEAAD0;
@@ -19,6 +18,9 @@
     --border-radius: 20px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 /* ========================= */
 .body {
@@ -61,6 +63,7 @@
 .main__testimonials {
     padding-bottom: 145px;
 }
+
 /* .main__gallery {
     padding-bottom: 145px;
 } */
@@ -217,4 +220,3 @@
     opacity: 1;
     visibility: visible;
 }
-
