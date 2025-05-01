@@ -1,21 +1,17 @@
 :root {
-    --color-ac-orange: #FFA55C;
-    --color-ac-pink: #CEAAD0;
-    --color-bg-button: #FFE0CB;
-    --color-body: #FFF9F4;
-    --color-bg-img: #704174;
-    --color-bg-disable: #E1D9E1;
-    --color-bg-inputs: #AC907A;
-    --color-text-head: #1F1711;
-    --color-text: #312C27;
+    /* --color-ac-orange: #FFA55C; */
+    --color-body: #FFFFFF; 
+    --color-red: #DE343D;
+    --color-bg_product: #F9F9F9;
+    --color-text-name: #9C9C9C;
 
 
-    --font-family: "Montserrat", sans-serif;
+    --font-family: "PP Monument Extended", sans-serif;
     --second-family: "Gabriola", sans-serif;
     --third-family: "Inspiration", sans-serif;
 
-    --transition: all .4s;
-    --border-radius: 20px;
+    /* --transition: all .4s; */
+    /* --border-radius: 20px; */
 }
 
 html {
@@ -34,14 +30,6 @@ html {
     color: var(--color-text);
 }
 
-.body--opened-menu {
-    overflow: hidden;
-}
-
-.body--opened-modal {
-    overflow: hidden;
-}
-
 .wraper {
     min-height: 100%;
     width: 100%;
@@ -50,27 +38,8 @@ html {
     flex-direction: column;
 }
 
-.main {
-    flex-grow: 1;
-    background: var(--color-body);
-}
-
-.main__about {
-    padding: 140px 0;
-}
-
-.main__program,
-.main__gallery,
-.main__testimonials {
-    padding-bottom: 145px;
-}
-
-/* .main__gallery {
-    padding-bottom: 145px;
-} */
-
 .container {
-    max-width: 1310px;
+    max-width: 1728px;
     padding: 0 15px;
     margin: 0 auto;
     height: 100%;

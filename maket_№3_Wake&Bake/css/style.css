@@ -1025,6 +1025,9 @@ background-image: url('../img/icons/check.svg');
 }
 
 @media(max-width:800px) {
+    html {
+        scroll-padding-top: 50px;
+    }
     .hero__content {
         max-width: none;
         display: flex;

@@ -1,0 +1,53 @@
+@import "fonts.css";
+@import "reset.css";
+@import "global.css";
+
+/* @import "header.css"; */
+/* @import "footer.css"; */
+
+/* ========================================== */
+
+/* text-transform: uppercase; */
+
+.header{
+    /* display: flex; */
+    position: relative;
+    /* background: url("../img/decor/footer_sneakers.png") 50% 100% / cover no-repeat; */
+    background: linear-gradient(209deg, #de343d 0%, #ffb800 100%);
+    width: 1920px;
+    height: 1065px;
+    z-index: -1;
+}
+
+.header__top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: end;
+    align-items: center;
+    padding: 29px 0;
+    text-transform: uppercase;
+    /* position: absolute;
+    z-index: 2; */
+    background-color: var(--color-body);
+    margin: 0 130px;
+}
+
+.header__nav {
+    grid-column: 1 / -2;
+    color: #000;
+    display: flex;
+    gap: 41.28px;
+}
+
+.header__item {
+    /* font-family: var(--font-family); */
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 213%;
+    /* letter-spacing: 0.07em; */
+    color: #000;
+}
+.header__search{
+    display: flex;
+    gap: 10px;
+}
