@@ -20,16 +20,19 @@
 }
 
 .header__top {
+    /* position: absolute;
+    z-index: 2; */
+    background-color: var(--color-body);
+    /* margin: 0 130px;  */
+}
+
+.header__inner{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: end;
     align-items: center;
     padding: 29px 0;
     text-transform: uppercase;
-    /* position: absolute;
-    z-index: 2; */
-    background-color: var(--color-body);
-    margin: 0 130px;
 }
 
 .header__nav {
