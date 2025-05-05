@@ -6,7 +6,7 @@
     --color-text-name: #9C9C9C;
 
 
-    --font-family: "PP Monument Extended", sans-serif;
+    --font-family: "Monument Extended", sans-serif;
     --second-family: "Gabriola", sans-serif;
     --third-family: "Inspiration", sans-serif;
 
@@ -39,11 +39,11 @@ html {
 }
 
 .container {
-    max-width: 1728px;
-    padding: 0 15px;
-    margin: 0 auto;
-    height: 100%;
+    /* max-width: 1740px; */
+    margin: 0 84px 0 96px;
+    /* margin: 0 auto; */
     line-height: 24px;
+    /* height: 100%; */
 }
 
 .title {
