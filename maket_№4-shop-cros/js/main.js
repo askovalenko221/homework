@@ -2,7 +2,7 @@
     const swiper = new Swiper(".header__slider", {
         // direction: "vertical",
         slidesPerView: 1,
-        spaceBetween: 30,
+        spaceBetween: 50,
         mousewheel: true, // прокрутка мышкой
         grabCursor: true, // Курсор-рука при наведении
         loop: true, // Бесконечная прокрутка
