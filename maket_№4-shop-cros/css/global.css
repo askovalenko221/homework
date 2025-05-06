@@ -1,6 +1,6 @@
 :root {
     /* --color-ac-orange: #FFA55C; */
-    --color-body: #FFFFFF; 
+    --color-body: #FFFFFF;
     --color-red: #DE343D;
     --color-bg_product: #F9F9F9;
     --color-text-name: #9C9C9C;
@@ -15,8 +15,10 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Плавная прокрутка страницы */
     scroll-padding-top: 100px;
+    overflow-x: hidden; /* Отключает горизонтальный скролл */
+    width: 100%;   
 }
 
 /* ========================= */
@@ -28,6 +30,7 @@ html {
     /* font-weight: 400; Дефолтное значение */
     line-height: 1.5;
     color: var(--color-text);
+
 }
 
 .wraper {
