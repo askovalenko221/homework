@@ -5,7 +5,7 @@
     --color-bg_product: #F9F9F9;
     --color-text-name: #9C9C9C;
 
-
+/* privet */
     --font-family: "Monument Extended", sans-serif;
     --second-family: "Gabriola", sans-serif;
     --third-family: "Inspiration", sans-serif;
@@ -97,7 +97,7 @@ html {
     /* transition: var(--transition); */
 }
 
-.modal--opened {}
+/* .modal--opened {} */
 
 .modal__window {
     background: var(--color-body);
@@ -136,7 +136,7 @@ html {
     margin-bottom: 30px;
 }
 
-.modall__form {}
+/* .modall__form {} */
 
 .modal__form-label {
     margin-bottom: 10px;
