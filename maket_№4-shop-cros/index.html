@@ -84,10 +84,10 @@
             </div>
         </header>
         <main class="main">
-            <section class="sellers-top">
+            <section class="products-slides">
                 <div class="container">
-                    <div class="sellers-top__inner">
-                        <span class="sellers-top__title">Top Sellers</span>
+                    <div class="products__inner">
+                        <h2 class="products__title">Top Sellers</h2>
                         <div class="controls-bar">
                             <button class="filters">
                                 <img src="img/icons/filter_alt.svg" alt="">
@@ -95,13 +95,20 @@
                             </button>
                             <button class="sort">
                                 <img src="img/icons/sort_black.svg" alt="">
-                                SORT BY
+                                <span>SORT BY</span>
                             </button>
-                            <div class="action-icons">
-                                <button class="icon-btn"><img src="img/icons/menu.svg" alt=""></button>
-                                <button class="icon-btn"><img src="img/icons/plitka.svg" alt=""></button>
+                            <div class="action__icons">
+                                <button class="icon__btn icon__btn-list "><img src="img/icons/menu.svg" alt=""></button>
+                                <div class="divider"></div>
+                                <button class="icon__btn icon__btn-group"><img src="img/icons/plitka.svg"
+                                        alt=""></button>
                             </div>
                         </div>
+
+                    <!-- <div class="parent" style="display: flex; gap: 20px; background: #ccc; padding: 10px;">
+                        <div style="background: white;">Item 1</div>
+                        <div style="background: white;">Item 2</div>
+                    </div> -->
 
                     </div>
                     <div class="sellers-top__slider"></div>
@@ -110,6 +117,37 @@
                     </button>
                 </div>
             </section>
+            <div class="products-section">
+                <div class="section-header">
+                    <h2>Top Sellers</h2>
+                    <div class="controls">
+                        <div class="filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="nike">Nike</button>
+                            <button class="filter-btn" data-filter="new-balance">New Balance</button>
+                        </div>
+                        <div class="sort">
+                            <select id="sort-select">
+                                <option value="popular">Most Popular</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-slider">
+                    <div class="slider-container">
+                        <!-- Товары будут добавляться динамически через JavaScript -->
+                    </div>
+                    <button class="slider-arrow prev">‹</button>
+                    <button class="slider-arrow next">›</button>
+                </div>
+
+                <div class="see-all">
+                    <a href="#">SEE ALL</a>
+                </div>
+            </div>
         </main>
     </div>
 
