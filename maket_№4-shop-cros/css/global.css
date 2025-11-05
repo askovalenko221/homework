@@ -33,8 +33,9 @@ html {
 
 }
 
-.wraper {
+.wrapper {
     min-height: 100%;
+    /* max-width: 1024px; */
     width: 100%;
     overflow: hidden;
     display: flex;

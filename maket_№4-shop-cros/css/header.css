@@ -27,6 +27,16 @@
     line-height: 2.13;
 }
 
+.header__pagination.swiper-pagination {
+    max-height: 265px;
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+        bottom: var(--swiper-pagination-bottom, 8px);
+    top: var(--swiper-pagination-top, auto);
+    left: 0;
+    width: 5%;
+} 
+
 .header__nav {
     grid-column: 1 / -2;
     display: flex;
