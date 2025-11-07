@@ -44,6 +44,7 @@ html {
 
 .container {
     /* max-width: 1740px; */
+    max-width: 100%;
     margin: 0 84px 0 96px;
     /* margin: 0 auto; */
     line-height: 24px;

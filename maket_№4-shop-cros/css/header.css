@@ -50,6 +50,7 @@
 
 .header__item:first-child {
     font-weight: 800;
+    
 }
 
 .header__search {
@@ -58,6 +59,7 @@
     align-items: center;
     padding: 1vh 0;
     background: transparent;
+    text-transform: uppercase;
 }
 
 /* ------------- */
@@ -84,6 +86,7 @@
     align-items: end;
     justify-items: center;
     margin-top: 35px;
+    /* text-transform: uppercase; */
     /* margin-bottom: 80px; */
 }
 

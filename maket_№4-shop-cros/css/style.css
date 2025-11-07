@@ -11,10 +11,18 @@
 
 
 /* --------------- */
+/* .products-slides{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+} */
 
 .products__inner {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 30px;
 
 }
 
@@ -125,3 +133,12 @@ padding:0 13px 0 20px;
     padding-left: 13px;
 }
 
+.sellers-top__slider{
+    padding:20px 0 50px;
+}
+
+.btn__all{
+    margin: 69px 0;
+    display: flex;
+    justify-content: center;
+}
