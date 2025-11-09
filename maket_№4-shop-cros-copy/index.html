@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Sneakers - Nike Store</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <!-- Header with Navigation -->
+        <header class="header">
+            <div class="header__top">
+                <div class="container">
+                    <div class="header__inner">
+                        <ul class="header__nav">
+                            <li class="header__item">
+                                <a class="header__link header__link--active" href="#">ALL</a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__link" href="#">FOOTWEAR</a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__link" href="#">APPAREL</a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__link" href="#">BASKETBALL</a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__link" href="#">SLIDES</a>
+                            </li>
+                        </ul>
+                        <button class="header__search" type="button">
+                            <img src="img/icons/search-normal.svg" alt="Search">
+                            <span>SEARCH</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="header__hero">
+                <div class="header__hero-title">
+                    AIR MAX
+                </div>
+                <div class="header__hero-bottom">
+                    <button class="button__pay" type="button">
+                        <a href="#">BUY NOW</a>
+                    </button>
+                </div>
+                <!-- Swiper -->
+                <div class="header__slider swiper">
+                    <div class="header__wrapper swiper-wrapper">
+                        <div class="header__slide swiper-slide">
+                            <div class="header__slide-img">
+                                <img src="img/decor/footer_sneakers.png" alt="Nike Sneaker">
+                            </div>
+                        </div>
+                        <div class="header__slide swiper-slide">
+                            <div class="header__slide-img">
+                                <img src="img/hero/sneaker-white.png" alt="Nike Sneaker">
+                            </div>
+                        </div>
+                        <div class="header__slide swiper-slide">
+                            <div class="header__slide-img">
+                                <img src="img/decor/footer_sneakers.png" alt="Nike Sneaker">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__pagination swiper-pagination"></div>
+            </div>
+        </header>
+
+        <main class="main">
+            <!-- Top Sellers Section 1 -->
+            <section class="top-sellers-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h1 class="section-title">Top Sellers</h1>
+                        <div class="controls-bar">
+                            <button class="filters">
+                                <img src="img/icons/filter.svg" alt="Filter">
+                                <span>FILTERS</span>
+                            </button>
+                            <button class="sort">
+                                <img src="img/icons/sort.svg" alt="Sort">
+                                <span>SORT BY</span>
+                            </button>
+                            <div class="action__icons">
+                                <button class="icon-btn ">
+                                    <img src="img/icons/grid-view.svg" alt="Grid View">
+                                </button>
+                                <button class="icon-btn">
+                                    <img src="img/icons/list-view.svg" alt="List View">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="products-carousel">
+                        <button class="carousel-arrow carousel-arrow--left" id="carousel1-prev">
+                            <img src="img/icons/arrow-left.svg" alt="Previous">
+                        </button>
+                        <div class="products-grid" id="products-container-1">
+                            <!-- Products will be loaded here by JavaScript -->
+                        </div>
+                        <button class="carousel-arrow carousel-arrow--right" id="carousel1-next">
+                            <img src="img/icons/arrow-right.svg" alt="Next">
+                        </button>
+                    </div>
+
+                    <div class="see-all-container">
+                        <button class="see-all-btn">SEE ALL</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Brand Showcase Section -->
+            <section class="brand-section">
+                <div class="brand-section__content">
+                    <img src="img/decor/sneaker-orange-brand.png" alt="Sneaker" class="brand-section__sneaker brand-section__sneaker--left">
+                    <img src="img/decor/decor_sneakers-2.png" alt="Sneaker" class="brand-section__sneaker brand-section__sneaker--right-top">
+                    <img src="img/decor/sneaker-red-brand.png" alt="Sneaker" class="brand-section__sneaker brand-section__sneaker--right-bottom">
+                    
+                    <h2 class="brand-section__title">
+                        <span>Not</span>
+                        <img src="img/decor/decor_sneakers-3.png" alt="Sneaker" class="brand-section__title-sneaker">
+                        <span>Just For</span>
+                    </h2>
+                    <h2 class="brand-section__subtitle">
+                        <span>Street Anymore</span>
+                        <img src="img/decor/decor_sneakers-1.png" alt="Sneaker" class="brand-section__subtitle-sneaker">
+                    </h2>
+
+                    <div class="brand-logos">
+                        <img src="img/lable/nike.png" alt="Nike" class="brand-logo">
+                        <img src="img/lable/adidas.png" alt="Adidas" class="brand-logo">
+                        <img src="img/lable/vans.png" alt="Vans" class="brand-logo">
+                        <img src="img/lable/new_balance.png" alt="New Balance" class="brand-logo">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nike Promotional Banner -->
+            <section class="promo-section">
+                <div class="promo-section__banner">
+                    <div class="promo-section__text-strip">
+                        <span>JUST DO IT</span>
+                        <span>JUST DO IT</span>
+                        <span>JUST DO IT</span>
+                        <span>JUST DO IT</span>
+                        <span>JUST DO IT</span>
+                    </div>
+                    <div class="promo-section__content">
+                        <div class="promo-section__swoosh">
+                            <!-- Nike Swoosh will be styled with CSS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Sellers Section 2 -->
+            <section class="top-sellers-section top-sellers-section--second">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Top Sellers</h2>
+                        <div class="controls-bar">
+                            <button class="filters">
+                                <img src="img/icons/filter.svg" alt="Filter">
+                                <span>FILTERS</span>
+                            </button>
+                            <button class="sort">
+                                <img src="img/icons/sort.svg" alt="Sort">
+                                <span>SORT BY</span>
+                            </button>
+                            <div class="action__icons">
+                                <button class="icon-btn icon-btn--active">
+                                    <img src="img/icons/grid-view.svg" alt="Grid View">
+                                </button>
+                                <button class="icon-btn">
+                                    <img src="img/icons/list-view.svg" alt="List View">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="products-grid products-grid--full" id="products-container-2">
+                        <!-- Products will be loaded here by JavaScript -->
+                    </div>
+
+                    <div class="see-all-container">
+                        <button class="see-all-btn">SEE ALL</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__column">
+                        <h3 class="footer__heading">Company</h3>
+                        <ul class="footer__links">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Mobile</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h3 class="footer__heading">Contact</h3>
+                        <ul class="footer__links">
+                            <li><a href="#">Help/FAQ</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Affilates</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h3 class="footer__heading">More</h3>
+                        <ul class="footer__links">
+                            <li><a href="#">Airlinefees</a></li>
+                            <li><a href="#">Airline</a></li>
+                            <li><a href="#">Low fare tips</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
