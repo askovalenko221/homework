@@ -80,31 +80,44 @@
     color: var(--color-red);
 }
 
-
 .action__icons {
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* gap: 0; убираем лишний зазор между кнопками */
-    padding: 0;
-    background: #dedede;
-    border: 1.6px solid #dedede;
-    border-radius: 4px;
-    /* width: 115px; */
-    height: 51px;
+    border: 1.26px solid #dedede;
     overflow: hidden;
 }
 
+
+/* .action__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    background: transparent;
+    border: 1.6px solid #dedede;
+    border-radius: 4px;
+    height: 51px;
+    overflow: hidden;
+} */
+
 .icon__btn {
-    background: white;
+    padding: 12px 16px;
+    background: transparent;
     border: none;
-    width: 50%;
+    border-right: 1.26px solid #dedede;
+    /* width: 50%; */
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
     /* justify-content: center; */
     /* cursor: pointer; */
     /* transition: background 0.2s; */
+}
+
+.icon__btn:last-child{
+    border-right: none;
 }
 
 .icon__btn img {
