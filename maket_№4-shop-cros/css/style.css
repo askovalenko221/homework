@@ -19,9 +19,10 @@
     width: 100%;
 } */
 
-.products__inner {
+.section-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-bottom: 30px;
 
 }
@@ -30,60 +31,55 @@
     /* font-weight: 400; */
     font-size: 37px;
     line-height: 1.07;
-    color: #de343d;
+    color: var(--color-red);
     max-height: 51px;
     padding: 5px 0;
 }
 
 .controls-bar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     gap: 30px;
+    /* align-items: center; */
 }
 
-.controls-bar>* img {
+/* .controls-bar>* img {
     max-width: 25px;
     max-height: 25px;
-}
+} */
 
-.filters {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 5px 20px;
-    font-size: 15px;
-    color: #808080;
-    line-height: 2.56;
-    letter-spacing: 0.08em;
-    background: transparent;
-    border: 1.6px solid #dedede;
-    height: 100%;
-    max-width: 160px;
-    width: 100%;
-}
-
+.filters,
 .sort {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 5px;
     padding: 5px 20px;
     font-size: 15px;
     color: #808080;
     line-height: 2.56;
-    letter-spacing: 0.08em;
+    letter-spacing: 1.26px;
     background: transparent;
-    border: 1.6px solid #dedede;
-    height: 100%;
-    max-width: 173px;
-    width: 100%;
+    border: 1.26px solid #dedede;
+    cursor: pointer;
+    transition: all 0.3s;
+    /* height: 100%;
+    max-width: 159px;
+    width: 100%; */
 }
 
-.sort span {
-    white-space: nowrap;
+.filters:hover,
+.sort:hover {
+    border-color: var(--color-red);
+    color: var(--color-red);
 }
+
+.filters img:hover,
+.sort img:hover {
+    border-color: var(--color-red);
+    color: var(--color-red);
+}
+
 
 .action__icons {
     display: flex;
@@ -115,29 +111,33 @@
     width: 25px;
     height: 25px;
     /* object-fit: contain; */
-    opacity: 0.5; /* серый по умолчанию */
+    opacity: 0.5;
+    /* серый по умолчанию */
     /* transition: opacity 0.2s; */
 }
+
 .divider {
     width: 1.6px;
     height: 100%;
     background-color: #dedede;
 }
-.icon__btn-list{
-padding:0 13px 0 20px;
-/* padding-left: 20px; */
+
+.icon__btn-list {
+    padding: 0 13px 0 20px;
+    /* padding-left: 20px; */
 }
-.icon__btn-group{
+
+.icon__btn-group {
     /* padding: 0 20px 0 13px; */
     /* padding-right: 20px; */
     padding-left: 13px;
 }
 
-.sellers-top__slider{
-    padding:20px 0 50px;
+.sellers-top__slider {
+    padding: 20px 0 50px;
 }
 
-.btn__all{
+.btn__all {
     margin: 69px 0;
     display: flex;
     justify-content: center;
