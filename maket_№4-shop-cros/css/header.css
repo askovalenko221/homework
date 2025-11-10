@@ -114,7 +114,8 @@
     background: #de343d;
     color: #ffb800;
     border: 1.56px solid #ffb800;
-    border-radius: 20px;
+    border-radius: 30px;
+    transition: 0.2s;
     /* box-shadow: 0 4px 20px 0 #cec3b94d; */
 }
 
