@@ -51,15 +51,7 @@
             price: "₹11,999",
             sizes: "7-11",
             image: "img/products/new-balance-327.svg"
-        },
-        {
-            id: 5,
-            brand: "Nike",
-            name: "Air Force 1 Orche",
-            price: "₹9,985",
-            sizes: "8 -10",
-            image: "img/products/nike-air-force-orche.svg"
-        },
+        }
     ];
 
     // Function to create product card HTML
