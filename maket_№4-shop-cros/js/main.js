@@ -1,4 +1,5 @@
 (function () {
+    // Initialize Swiper for hero section
     const swiper = new Swiper(".header__slider", {
         // direction: "vertical",
         slidesPerView: 1,
@@ -17,128 +18,164 @@
         },
     });
 
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     // Данные товаров
-    //     const products = [
-    //         {
-    //             id: 1,
-    //             brand: "Nike",
-    //             name: "Air Force 1 Orche",
-    //             price: 19965,
-    //             sizes: "8 - 10",
-    //             category: "nike"
-    //         },
-    //         {
-    //             id: 2,
-    //             brand: "Nike",
-    //             name: "Air Force Panda",
-    //             price: 119655,
-    //             sizes: "6 - 10",
-    //             category: "nike"
-    //         },
-    //         {
-    //             id: 3,
-    //             brand: "Nike",
-    //             name: "Air Force 1 '07",
-    //             price: 115750,
-    //             sizes: "9 - 12",
-    //             category: "nike"
-    //         },
-    //         {
-    //             id: 4,
-    //             brand: "New Balance",
-    //             name: "327' Munseil White",
-    //             price: 111999,
-    //             sizes: "7 - 11",
-    //             category: "new-balance"
-    //         }
-    //         // Добавьте больше товаров по аналогии
-    //     ];
+        // Product data
+    const products = [
+        {
+            id: 1,
+            brand: "Nike",
+            name: "Air Force 1 Orche",
+            price: "₹9,985",
+            sizes: "8 -10",
+            image: "img/products/nike-air-force-orche.svg"
+        },
+        {
+            id: 2,
+            brand: "Nike",
+            name: "Air Force Panda",
+            price: "₹19,655",
+            sizes: "6 -10",
+            image: "img/products/nike-air-force-panda.svg"
+        },
+        {
+            id: 3,
+            brand: "Nike",
+            name: "Air Force 1 '07",
+            price: "₹15,750",
+            sizes: "9-12",
+            image: "img/products/nike-air-force-07.svg"
+        },
+        {
+            id: 4,
+            brand: "New Balance",
+            name: "327' Munsell White",
+            price: "₹11,999",
+            sizes: "7-11",
+            image: "img/products/new-balance-327.svg"
+        },
+        {
+            id: 5,
+            brand: "Nike",
+            name: "Air Force 1 Orche",
+            price: "₹9,985",
+            sizes: "8 -10",
+            image: "img/products/nike-air-force-orche.svg"
+        },
+    ];
 
-    //     const sliderContainer = document.querySelector('.slider-container');
-    //     const filterButtons = document.querySelectorAll('.filter-btn');
-    //     const sortSelect = document.getElementById('sort-select');
+    // Function to create product card HTML
+    function createProductCard(product) {
+        return `
+            <div class="product-card" data-product-id="${product.id}">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <div class="brand">${product.brand}</div>
+                    <h3 class="product-name">${product.name}</h3>
+                    <div class="price">${product.price}</div>
+                    <div class="sizes">Sizes: ${product.sizes}</div>
+                </div>
+            </div>
+        `;
+    }
 
-    //     // Отображение товаров
-    //     function displayProducts(productsToDisplay) {
-    //         sliderContainer.innerHTML = '';
+    // Function to render products in a container
+    function renderProducts(containerId, productsToRender) {
+        const container = document.getElementById(containerId);
+        if (container) {
+            container.innerHTML = productsToRender.map(product => 
+                createProductCard(product)
+            ).join('');
+        }
+    }
 
-    //         productsToDisplay.forEach(product => {
-    //             const productCard = document.createElement('div');
-    //             productCard.className = 'product-card';
-    //             productCard.innerHTML = `
-    //           <div class="product-brand">${product.brand}</div>
-    //           <div class="product-name">${product.name}</div>
-    //           <div class="product-price">${formatPrice(product.price)}</div>
-    //           <div class="product-sizes">Sizes: ${product.sizes}</div>
-    //         `;
-    //             sliderContainer.appendChild(productCard);
-    //         });
-    //     }
+    // Initialize products on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Render first carousel (4 products)
+        renderProducts('products-container-1', products);
+        
+        // Render second section (6 products - duplicating some)
+        const productsSection2 = [
+            ...products,
+            products[0], // Duplicate first product
+            products[1]  // Duplicate second product
+        ];
+        renderProducts('products-container-2', productsSection2);
 
-    //     // Форматирование цены
-    //     function formatPrice(price) {
-    //         return new Intl.NumberFormat('en-US').format(price);
-    //     }
+        // Add event listeners
+        initEventListeners();
+    });
 
-    //     // Фильтрация товаров
-    //     function filterProducts(category) {
-    //         if (category === 'all') {
-    //             return products;
-    //         }
-    //         return products.filter(product => product.category === category);
-    //     }
+    // Initialize event listeners
+    function initEventListeners() {
+        // See All buttons
+        document.querySelectorAll('.see-all-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                console.log('See all products clicked');
+                // Here you would typically navigate to a products page
+            });
+        });
 
-    //     // Сортировка товаров
-    //     function sortProducts(productsToSort, sortBy) {
-    //         const sortedProducts = [...productsToSort];
+        // Filter buttons
+        document.querySelectorAll('.filters').forEach(btn => {
+            btn.addEventListener('click', function() {
+                console.log('Filters clicked');
+                // Here you would implement filter logic
+            });
+        });
 
-    //         switch (sortBy) {
-    //             case 'price-asc':
-    //                 return sortedProducts.sort((a, b) => a.price - b.price);
-    //             case 'price-desc':
-    //                 return sortedProducts.sort((a, b) => b.price - a.price);
-    //             default: // 'popular'
-    //                 return sortedProducts.sort((a, b) => b.price - a.price); // Пример сортировки по популярности
-    //         }
-    //     }
+        // Sort buttons
+        document.querySelectorAll('.sort').forEach(btn => {
+            btn.addEventListener('click', function() {
+                console.log('Sort clicked');
+                // Here you would implement sort logic
+            });
+        });
 
-    //     // Обработчики событий для фильтров
-    //     filterButtons.forEach(button => {
-    //         button.addEventListener('click', () => {
-    //             // Удаляем active класс у всех кнопок
-    //             filterButtons.forEach(btn => btn.classList.remove('active'));
-    //             // Добавляем active класс текущей кнопке
-    //             button.classList.add('active');
+        // View toggle buttons
+        document.querySelectorAll('.icon-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from siblings
+                this.parentElement.querySelectorAll('.icon-btn').forEach(b => {
+                    b.classList.remove('icon-btn--active');
+                });
+                // Add active class to clicked button
+                this.classList.add('icon-btn--active');
+            });
+        });
 
-    //             const filteredProducts = filterProducts(button.dataset.filter);
-    //             const sortedProducts = sortProducts(filteredProducts, sortSelect.value);
-    //             displayProducts(sortedProducts);
-    //         });
-    //     });
+        // Product cards click
+        document.addEventListener('click', function(e) {
+            const card = e.target.closest('.product-card');
+            if (card) {
+                const productId = card.dataset.productId;
+                const product = products.find(p => p.id == productId);
+                if (product) {
+                    console.log('Product clicked:', product.name);
+                    // Here you would navigate to product detail page
+                }
+            }
+        });
 
-    //     // Обработчик события для сортировки
-    //     sortSelect.addEventListener('change', () => {
-    //         const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
-    //         const filteredProducts = filterProducts(activeFilter);
-    //         const sortedProducts = sortProducts(filteredProducts, sortSelect.value);
-    //         displayProducts(sortedProducts);
-    //     });
+        // Carousel navigation for first section
+        const carousel1 = document.getElementById('products-container-1');
+        const carousel1Prev = document.getElementById('carousel1-prev');
+        const carousel1Next = document.getElementById('carousel1-next');
 
-    //     // Инициализация слайдера
-    //     const slider = document.querySelector('.slider-container');
-    //     const prevBtn = document.querySelector('.slider-arrow.prev');
-    //     const nextBtn = document.querySelector('.slider-arrow.next');
+        if (carousel1 && carousel1Prev && carousel1Next) {
+            carousel1Next.addEventListener('click', () => {
+                carousel1.scrollBy({ left: 450, behavior: 'smooth' });
+            });
 
-    //     nextBtn.addEventListener('click', () => {
-    //         slider.scrollBy({ left: 250, behavior: 'smooth' });
-    //     });
+            carousel1Prev.addEventListener('click', () => {
+                carousel1.scrollBy({ left: -450, behavior: 'smooth' });
+            });
+        }
+    }
 
-    //     prevBtn.addEventListener('click', () => {
-    //         slider.scrollBy({ left: -250, behavior: 'smooth' });
-    //     });
+    // Make functions globally available if needed
+    window.createProductCard = createProductCard;
+    window.productsData = products;
 
-    //     // Показываем все товары при загрузке
-    //     displayProducts(sortProducts(products, 'popular'));
-    // });
+
 })()

@@ -107,15 +107,15 @@
     margin-bottom: 80px;
     align-items: center;
     /* cursor: pointer; */
-    transition: 1s;
+    transition: var(--transition-norm);
 }
 
 .button__pay:hover {
     background: #de343d;
     color: #ffb800;
     border: 1.56px solid #ffb800;
-    border-radius: 30px;
-    transition: 0.2s;
+    border-radius: 15px;
+    transform: scale(1.1);
     /* box-shadow: 0 4px 20px 0 #cec3b94d; */
 }
 
