@@ -1,19 +1,24 @@
 (function () {
     // Initialize Swiper for hero section
     const swiper = new Swiper(".header__slider", {
+        // direction: "vertical",
         slidesPerView: 1,
         spaceBetween: 50,
-        mousewheel: true,
-        grabCursor: true,
-        loop: true,
-        speed: 800,
+        mousewheel: true, // прокрутка мышкой
+        grabCursor: true, // Курсор-рука при наведении
+        loop: true, // Бесконечная прокрутка
+        speed: 800, // Скорость анимации (мс)
+        // effect: 'creative', // 'slide' или 'fade', 'cube', 'coverflow', 'creative'
+        // progressbarOpposite: Boolean,
         pagination: {
             el: ".header__pagination",
             clickable: true,
+            // type: 'fraction',
+            // verticalClass: string,
         },
     });
 
-    // Product data
+        // Product data
     const products = [
         {
             id: 1,
@@ -163,4 +168,6 @@
     // Make functions globally available if needed
     window.createProductCard = createProductCard;
     window.productsData = products;
-})();
+
+
+})()

@@ -1,0 +1,231 @@
+@import "fonts.css";
+@import "reset.css";
+@import "global.css";
+@import "header.css";
+
+/* @import "footer.css"; */
+
+/* ========================================== */
+
+/* text-transform: uppercase; */
+
+
+/* --------------- */
+/* .products-slides{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+} */ 
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+
+}
+
+.products__title {
+    /* font-weight: 400; */
+    font-size: 37px;
+    line-height: 1.07;
+    color: var(--color-red);
+    max-height: 51px;
+    padding: 5px 0;
+}
+
+.controls-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    /* align-items: center; */
+}
+
+/* .controls-bar>* img {
+    max-width: 25px;
+    max-height: 25px;
+} */
+
+.filters,
+.sort {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 5px;
+    padding: 5px 20px;
+    font-size: 15px;
+    line-height: 2.56;
+    color: var(--color-text_btn);
+    letter-spacing: 1.26px;
+    background: transparent;
+    border: 1.26px solid #dedede;
+    cursor: pointer;
+    transition: var(--transition-norm);
+    /* height: 100%;
+    max-width: 159px;
+    width: 100%; */
+}
+
+.filters:hover,
+.sort:hover {
+    /* border-color: var(--color-red); */
+    border-radius: 10px;
+    /* color: var(--color-red); */
+    transform: scale(1.2);
+}
+
+.action__icons {
+    display: flex;
+    align-items: center;
+    border: 1.26px solid #dedede;
+    overflow: hidden;
+}
+
+.icon__btn {
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    border-right: 1.26px solid #dedede;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-norm);
+}
+
+.icon__btn:last-child {
+    border-right: none;
+}
+
+.icon__btn img {
+    width: 25px;
+    height: 25px;
+    transition: var(--transition-norm);
+}
+
+.icon__btn:hover img {
+    transform: scale(1.3);
+}
+
+
+/* ========Product Slider ====== */
+.product-slider {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.carousel-arrow {
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: var(--transition-norm);
+    z-index: 10;
+}
+
+.carousel-arrow--left {
+    left: -30px;
+}
+
+.carousel-arrow--right {
+    right: -30px;
+}
+
+.carousel-arrow:hover {
+    opacity: 0.7;
+}
+
+/* ===== Product cards-------------- */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.products-grid--full {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 40px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image {
+    max-width: 100%;
+    aspect-ratio: 1;
+    background-color: var(--color-bg_product);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.brand{
+    font-size: 22px;
+    color: var(--color-text-name);
+    letter-spacing: 1.57px;
+}
+
+.product-name{
+    font-size: 25px;
+    color: var(--color-text_brand);
+}
+
+.price{
+    font-size: 20px;
+}
+
+.sizes{
+    font-size: 18px;
+    letter-spacing: 1.57px;
+    color: var(--color-red);
+}
+
+/* ======= Button SeeAll=========== */
+.see-all-container {
+    margin: 69px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.see-all-btn {
+    border: 1.56px solid #dedede;
+    padding: 6px 24px;
+    font-size: 20px;
+    line-height: 2.56;
+    letter-spacing: 0.08em;
+    color: var(--color-text_btn);
+    background: transparent;
+    transition: var(--transition-norm);
+}
+
+.see-all-btn:hover {
+    transform: scale(1.1);
+    border-radius: 15px;
+}

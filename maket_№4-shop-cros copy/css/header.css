@@ -40,56 +40,26 @@
 .header__nav {
     grid-column: 1 / -2;
     display: flex;
-    gap: 41.28px;
+    gap: 10px;
     align-items: center;
 }
 
 .header__item {
-    margin: 0;
+    margin: 0 16px;
 }
 
-.header__link {
-    font-size: 12.91px;
-    font-weight: 400;
-    letter-spacing: 0.86px;
-    text-transform: uppercase;
-    color: #000000;
-    transition: all 0.3s;
-    font-family: var(--font-family);
-    text-decoration: none;
-}
-
-.header__link--active {
+.header__item:first-child {
     font-weight: 800;
-}
-
-.header__link:hover {
-    color: var(--color-red);
+    
 }
 
 .header__search {
     display: flex;
-    gap: 10.32px;
+    gap: 10px;
     align-items: center;
-    padding: 0;
+    padding: 1vh 0;
     background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 12.91px;
-    font-weight: 400;
-    letter-spacing: 0.86px;
     text-transform: uppercase;
-    color: #000000;
-    font-family: var(--font-family);
-}
-
-.header__search img {
-    width: 18px;
-    height: 18px;
-}
-
-.header__search:hover {
-    color: var(--color-red);
 }
 
 /* ------------- */
@@ -97,16 +67,17 @@
 
 .header__hero-title {
     position: relative;
+    /* grid-column: 1/ -1; */
     display: flex;
     justify-content: center;
+
     margin-top: 150px;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 382px;
-    letter-spacing: 30px;
-    color: rgba(255, 255, 255, 0.15);
+    letter-spacing: -0.07em;
+    color: #ffffff24;
     background: transparent;
     text-transform: uppercase;
-    font-family: var(--font-family);
 }
 
 .header__hero-bottom {
@@ -121,8 +92,10 @@
 
 .button__pay {
     grid-column: -2/ -1;
+    /* display: flex; */
     border: 1.56px solid #fff;
     color: #fff;
+    /* font-weight: 400; */
     font-size: 20px;
     line-height: 2.56%;
     letter-spacing: 0.08em;
@@ -130,25 +103,19 @@
     max-width: 196px;
     height: 65px;
     background: transparent;
+    /* margin: 0 260px 80px 0; */
     margin-bottom: 80px;
     align-items: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: var(--font-family);
-}
-
-.button__pay a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 2px;
+    /* cursor: pointer; */
+    transition: var(--transition-norm);
 }
 
 .button__pay:hover {
     background: #de343d;
     color: #ffb800;
     border: 1.56px solid #ffb800;
-    border-radius: 20px;
+    border-radius: 15px;
+    transform: scale(1.1);
     /* box-shadow: 0 4px 20px 0 #cec3b94d; */
 }
 

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Sneakers</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__top">
+                <div class="container">
+                    <div class="header__inner">
+                        <ul class="header__nav">
+                            <li class="header__item">
+                                <a class="header__link" href="#">all</a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__link" href="#">footwear</a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__link" href="#">apparel</a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__link" href="#">basketball</a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__link" href="#">slides</a>
+                            </li>
+                        </ul>
+                        <button class="header__search" type="button">
+                            <img src="img/icons/search-normal.svg" alt="Поиск">
+                            <span>search </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="header__hero">
+                <div class="header__hero-title">
+                    air max
+                </div>
+                <div class="header__hero-bottom">
+                    <button class="button__pay" type="button">
+                        <a href="#">BUY NOW</a>
+                    </button>
+                </div>
+                <!-- Swiper -->
+                <div class="header__slider swiper">
+                    <div class="header__wrapper swiper-wrapper">
+                        <div class="header__slide swiper-slide">
+                            <div class="header__slide-img">
+                                <img src="img/decor/footer_sneakers.png" alt="">
+                            </div>
+                        </div>
+                        <div class="header__slide swiper-slide">
+                            <div class="header__slide-img">
+                                <img src="img/decor/footer_sneakers.png" alt="">
+                            </div>
+                        </div>
+                        <div class="header__slide swiper-slide">
+                            <div class="header__slide-img">
+                                <img src="img/decor/footer_sneakers.png" alt="">
+                            </div>
+                        </div>
+                        <div class="header__slide swiper-slide">
+                            <div class="header__slide-img">
+                                <img src="img/decor/footer_sneakers.png" alt="">
+                            </div>
+                        </div>
+                        <div class="header__slide swiper-slide">
+                            <div class="header__slide-img">
+                                <img src="img/decor/footer_sneakers.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="header__pagination swiper-pagination"></div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="top-sellers-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="products__title">Top Sellers</h2>
+                        <div class="controls-bar">
+                            <button class="filters">
+                                <img src="img/icons/filter_alt.svg" alt="Filter">
+                                <span>FILTERS</span>
+                            </button>
+                            <button class="sort">
+                                <img src="img/icons/sort_black.svg" alt="Sort">
+                                <span>SORT BY</span>
+                            </button>
+                            <div class="action__icons">
+                                <button class="icon__btn icon__btn-list">
+                                    <img src="img/icons/menu.svg" alt="List View">
+                                </button>
+                                <button class="icon__btn icon__btn-grid">
+                                    <img src="img/icons/plitka.svg" alt="Grid View">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-slider">
+                        <button class="carousel-arrow carousel-arrow--left" id="carousel1-prev">
+                            <img src="img/icons/arrow-left.svg" alt="Previous">
+                        </button>
+                        <div class="products-grid" id="products-container-1">
+                        </div>
+                        <button class="carousel-arrow carousel-arrow--right" id="carousel1-next">
+                            <img src="img/icons/arrow-right.svg" alt="Next">
+                        </button>
+
+                    </div>
+                    <div class="see-all-container">
+                        <button class="see-all-btn">SEE ALL
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+            <section class="product-"></section>
+            <div class="products-section">
+                <div class="section-header">
+                    <h2>Top Sellers</h2>
+                    <div class="controls">
+                        <div class="filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="nike">Nike</button>
+                            <button class="filter-btn" data-filter="new-balance">New Balance</button>
+                        </div>
+                        <div class="sort">
+                            <select id="sort-select">
+                                <option value="popular">Most Popular</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-slider">
+                    <div class="slider-container">
+                        <!-- Товары будут добавляться динамически через JavaScript -->
+                    </div>
+                    <button class="slider-arrow prev">‹</button>
+                    <button class="slider-arrow next">›</button>
+                </div>
+
+                <div class="see-all">
+                    <a href="#">SEE ALL</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
