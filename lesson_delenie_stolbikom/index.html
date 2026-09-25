@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Видеоурок: деление столбиком — 3 цифры ÷ 1 цифра</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-deep: #0b2a32;
+      --bg-mid: #134652;
+      --accent: #ff6b4a;
+      --accent-2: #2ec4b6;
+      --ink: #f4fbf9;
+      --muted: #b7d5d0;
+      --board: #102f36;
+      --digit: #fff7e8;
+      --glow: rgba(46, 196, 182, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: "Nunito", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 10% -10%, #1c5a67 0%, transparent 55%),
+        radial-gradient(900px 600px at 100% 0%, #3a2a1a 0%, transparent 50%),
+        linear-gradient(160deg, #071c22 0%, #0f3640 45%, #163a2e 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+      opacity: 0.5;
+    }
+
+    .stage {
+      position: relative;
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 18px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent-2), #7ad9c8);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: #073038;
+      box-shadow: 0 10px 30px var(--glow);
+      animation: pulse 2.8s ease-in-out infinite;
+    }
+
+    .brand h1 {
+      font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .badge {
+      background: rgba(255, 107, 74, 0.16);
+      border: 1px solid rgba(255, 107, 74, 0.45);
+      color: #ffd2c6;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    .screen {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(19, 70, 82, 0.85), rgba(8, 30, 36, 0.92));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+      min-height: 520px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 0;
+    }
+
+    @media (max-width: 860px) {
+      .screen { grid-template-columns: 1fr; min-height: auto; }
+    }
+
+    .narration {
+      padding: 36px 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-chip {
+      align-self: flex-start;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #073038;
+      background: var(--accent-2);
+      padding: 7px 12px;
+      border-radius: 10px;
+      animation: popIn 0.45s ease both;
+    }
+
+    .title {
+      font-size: clamp(1.7rem, 4vw, 2.55rem);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      animation: rise 0.55s ease both;
+    }
+
+    .title span { color: var(--accent); }
+
+    .speech {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      line-height: 1.55;
+      color: #e7f7f3;
+      font-weight: 700;
+      max-width: 34ch;
+      animation: rise 0.65s ease 0.08s both;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+      animation: rise 0.65s ease 0.14s both;
+    }
+
+    .board-wrap {
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(46,196,182,0.18), transparent 45%),
+        linear-gradient(160deg, rgba(255,255,255,0.03), transparent 40%);
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+
+    @media (max-width: 860px) {
+      .board-wrap { border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
+    }
+
+    .board {
+      width: min(100%, 340px);
+      aspect-ratio: 1 / 1.05;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, #163d46, #102f36);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      padding: 28px 24px 22px;
+      font-family: "JetBrains Mono", monospace;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .board::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 10%, rgba(255,255,255,0.08), transparent 35%);
+      pointer-events: none;
+    }
+
+    .division {
+      position: relative;
+      z-index: 1;
+      color: var(--digit);
+      font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+      font-weight: 700;
+      line-height: 1.35;
+      min-height: 280px;
+    }
+
+    .quot {
+      padding-left: 3.1ch;
+      letter-spacing: 0.08em;
+      min-height: 1.4em;
+      color: #ffe2a8;
+    }
+
+    .quot .q {
+      display: inline-block;
+      min-width: 1ch;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    .quot .q.on {
+      opacity: 1;
+      transform: none;
+      animation: popIn 0.35s ease both;
+    }
+
+    .row-top {
+      display: grid;
+      grid-template-columns: 2.2ch 1fr;
+      align-items: start;
+      gap: 0.35ch;
+      margin-top: 4px;
+    }
+
+    .divisor {
+      text-align: right;
+      padding-top: 0.15em;
+    }
+
+    .dividend-box {
+      border-left: 3px solid var(--accent-2);
+      border-top: 3px solid var(--accent-2);
+      padding: 0.1em 0 0 0.55ch;
+      position: relative;
+    }
+
+    .work {
+      margin-top: 0.15em;
+      padding-left: 2.7ch;
+      white-space: pre;
+      min-height: 8.5em;
+    }
+
+    .work .line {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+
+    .work .line.on {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .work .hi {
+      color: var(--accent-2);
+      text-shadow: 0 0 18px rgba(46,196,182,0.35);
+    }
+
+    .formula {
+      margin-top: 14px;
+      text-align: center;
+      font-family: "Nunito", sans-serif;
+      font-weight: 800;
+      color: #9fe8dc;
+      font-size: 1.05rem;
+      opacity: 0;
+      transform: scale(0.96);
+    }
+
+    .formula.on {
+      opacity: 1;
+      transform: none;
+      transition: 0.4s ease;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      background: rgba(7, 28, 34, 0.72);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 14px 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 900;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-size: 1rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-play {
+      background: linear-gradient(135deg, var(--accent), #ff8f55);
+      color: #2a1008;
+      box-shadow: 0 10px 28px rgba(255, 107, 74, 0.35);
+      min-width: 180px;
+      white-space: nowrap;
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.06);
+      color: var(--ink);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .progress-wrap {
+      flex: 1;
+      min-width: 180px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .bar > i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent-2), #7ad9c8, #ffe2a8);
+      transition: width 0.25s linear;
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .dots button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+    }
+
+    .dots button.active {
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px rgba(46,196,182,0.2);
+    }
+
+    .hidden-audio { display: none; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.86); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .slide-enter .title,
+    .slide-enter .speech,
+    .slide-enter .hint,
+    .slide-enter .step-chip {
+      animation: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">÷</div>
+        <div>
+          <h1>Столбик без боли</h1>
+          <p>Видеоурок · деление 3-значных на 1 цифру</p>
+        </div>
+      </div>
+      <div class="badge">пример: 756 ÷ 3</div>
+    </header>
+
+    <main class="screen" id="screen" aria-live="polite">
+      <section class="narration">
+        <div class="step-chip" id="chip">intro</div>
+        <h2 class="title" id="title">Йо, делим <span>столбиком</span></h2>
+        <p class="speech" id="speech">Загружаем урок…</p>
+        <p class="hint" id="hint">Жми «Смотреть урок» — и поехали.</p>
+      </section>
+
+      <section class="board-wrap">
+        <div class="board" aria-label="Доска деления столбиком">
+          <div class="division" id="division">
+            <div class="quot" id="quot">
+              <span class="q" data-q="0">2</span><span class="q" data-q="1">5</span><span class="q" data-q="2">2</span>
+            </div>
+            <div class="row-top">
+              <div class="divisor">3</div>
+              <div class="dividend-box">756</div>
+            </div>
+            <div class="work" id="work"></div>
+          </div>
+          <div class="formula" id="formula">756 ÷ 3 = 252 ✓</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="controls">
+      <button class="btn btn-play" id="playBtn" type="button">Смотреть урок</button>
+      <button class="btn btn-ghost" id="prevBtn" type="button">⟵</button>
+      <button class="btn btn-ghost" id="nextBtn" type="button">⟶</button>
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="stepLabel">Шаг 0 / 10</span>
+          <span id="timeLabel">0:00</span>
+        </div>
+        <div class="bar"><i id="barFill"></i></div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </footer>
+  </div>
+
+  <div class="hidden-audio" id="audios"></div>
+
+  <script>
+    const slides = [
+      {
+        chip: "старт",
+        title: "Йо, делим <span>столбиком</span>",
+        speech: "Сегодня без занудства: берём трёхзначное число и делим на одну цифру. Это реально проще, чем кажется.",
+        hint: "Формат: коротко · по шагам · с доской справа",
+        audio: "audio/01.mp3",
+        board: { q: [], work: "", formula: false }
+      },
+      {
+        chip: "пример",
+        title: "Берём <span>756 ÷ 3</span>",
+        speech: "Представь: 756 конфет на троих друзей. Сколько каждому? Сейчас узнаем честно — столбиком.",
+        hint: "Делимое 756 · делитель 3 · ищем частное",
+        audio: "audio/02.mp3",
+        board: { q: [], work: "", formula: false }
+      },
+      {
+        chip: "схема",
+        title: "Рисуем <span>столбик</span>",
+        speech: "Слева — делитель 3. Справа — 756. Сверху оставим место под ответ. Классика школьной доски.",
+        hint: "Уголок сверху и слева — рамка делимого",
+        audio: "audio/03.mp3",
+        board: { q: [], work: "", formula: false }
+      },
+      {
+        chip: "шаг 1",
+        title: "Первая цифра: <span>7</span>",
+        speech: "Сколько раз 3 вмещается в 7? Два раза (3×2=6). Пишем 2 в ответе над семёркой.",
+        hint: "Не влезает ровно? Берём ближайшее меньшее",
+        audio: "audio/04.mp3",
+        board: { q: [0], work: "  6\n", formula: false, hi: true }
+      },
+      {
+        chip: "шаг 1",
+        title: "Вычитаем: <span>7 − 6</span>",
+        speech: "Под семёркой пишем 6 и вычитаем: остаток 1. Остаток — это ок, так и задумано.",
+        hint: "Остаток всегда меньше делителя",
+        audio: "audio/05.mp3",
+        board: {
+          q: [0],
+          work: "  6\n− ——\n  1",
+          formula: false
+        }
+      },
+      {
+        chip: "шаг 2",
+        title: "Сносим <span>5</span> → 15",
+        speech: "К остатку 1 сносим пятёрку → 15. 3 в 15 вмещается ровно 5 раз. Пишем 5 в ответ.",
+        hint: "Снести = приписать следующую цифру",
+        audio: "audio/06.mp3",
+        board: {
+          q: [0, 1],
+          work: "  6\n− ——\n  15\n  15",
+          formula: false,
+          hi: true
+        }
+      },
+      {
+        chip: "шаг 2",
+        title: "15 − 15 = <span>0</span>",
+        speech: "3×5=15. Вычитаем — ноль. Красота, без хвостов. Идём дальше.",
+        hint: "Ноль — идеальный остаток",
+        audio: "audio/07.mp3",
+        board: {
+          q: [0, 1],
+          work: "  6\n− ——\n  15\n  15\n− ——\n   0",
+          formula: false
+        }
+      },
+      {
+        chip: "шаг 3",
+        title: "Сносим <span>6</span>",
+        speech: "Осталась шестёрка. 3 в 6 — два раза. Пишем последнюю 2 в ответ.",
+        hint: "Последняя цифра делимого → последняя цифра ответа",
+        audio: "audio/08.mp3",
+        board: {
+          q: [0, 1, 2],
+          work: "  6\n− ——\n  15\n  15\n− ——\n   06\n    6",
+          formula: false,
+          hi: true
+        }
+      },
+      {
+        chip: "финиш",
+        title: "Ответ: <span>252</span>",
+        speech: "6−6=0. Готово! 756 ÷ 3 = 252. Проверка: 252 × 3 снова даёт 756.",
+        hint: "Проверка умножением = чит-код на пятёрку",
+        audio: "audio/09.mp3",
+        board: {
+          q: [0, 1, 2],
+          work: "  6\n− ——\n  15\n  15\n− ——\n   06\n    6\n−  ——\n    0",
+          formula: true
+        }
+      },
+      {
+        chip: "лайфхак",
+        title: "Запомни <span>правило</span>",
+        speech: "Если первая цифра меньше делителя — бери сразу две. И всегда проверяй умножением. Ты красавчик, если досмотрел!",
+        hint: "Тренируйся на 848÷4, 639÷3, 915÷5",
+        audio: "audio/10.mp3",
+        board: {
+          q: [0, 1, 2],
+          work: "  6\n− ——\n  15\n  15\n− ——\n   06\n    6\n−  ——\n    0",
+          formula: true
+        }
+      }
+    ];
+
+    const els = {
+      chip: document.getElementById("chip"),
+      title: document.getElementById("title"),
+      speech: document.getElementById("speech"),
+      hint: document.getElementById("hint"),
+      work: document.getElementById("work"),
+      formula: document.getElementById("formula"),
+      playBtn: document.getElementById("playBtn"),
+      prevBtn: document.getElementById("prevBtn"),
+      nextBtn: document.getElementById("nextBtn"),
+      stepLabel: document.getElementById("stepLabel"),
+      timeLabel: document.getElementById("timeLabel"),
+      barFill: document.getElementById("barFill"),
+      dots: document.getElementById("dots"),
+      audios: document.getElementById("audios"),
+      screen: document.getElementById("screen")
+    };
+
+    let index = 0;
+    let playing = false;
+    let audioNodes = [];
+    let raf = null;
+
+    slides.forEach((s, i) => {
+      const a = document.createElement("audio");
+      a.preload = "auto";
+      a.src = s.audio;
+      a.dataset.i = String(i);
+      els.audios.appendChild(a);
+      audioNodes.push(a);
+
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.title = `Слайд ${i + 1}`;
+      dot.addEventListener("click", () => jumpTo(i));
+      els.dots.appendChild(dot);
+    });
+
+    function formatTime(sec) {
+      if (!Number.isFinite(sec)) return "0:00";
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${String(s).padStart(2, "0")}`;
+    }
+
+    function renderBoard(cfg) {
+      document.querySelectorAll(".quot .q").forEach((el) => {
+        const q = Number(el.dataset.q);
+        el.classList.toggle("on", cfg.q.includes(q));
+      });
+
+      const lines = (cfg.work || "").split("\n");
+      els.work.innerHTML = lines
+        .map((line, i) => {
+          const cls = line.trim() ? "line on" : "line on";
+          const content = cfg.hi && i === lines.length - 1
+            ? line.replace(/(\d+)/, '<span class="hi">$1</span>')
+            : line;
+          return `<div class="${cls}">${content || "&nbsp;"}</div>`;
+        })
+        .join("");
+
+      els.formula.classList.toggle("on", !!cfg.formula);
+    }
+
+    function renderSlide(i, { restartAnim = true } = {}) {
+      const s = slides[i];
+      index = i;
+      if (restartAnim) {
+        els.screen.classList.remove("slide-enter");
+        void els.screen.offsetWidth;
+      }
+      els.chip.textContent = s.chip;
+      els.title.innerHTML = s.title;
+      els.speech.textContent = s.speech;
+      els.hint.textContent = s.hint;
+      renderBoard(s.board);
+      els.stepLabel.textContent = `Шаг ${i + 1} / ${slides.length}`;
+      els.barFill.style.width = `${((i + 1) / slides.length) * 100}%`;
+      [...els.dots.children].forEach((d, di) => d.classList.toggle("active", di === i));
+    }
+
+    function stopAllAudio() {
+      audioNodes.forEach((a) => {
+        a.pause();
+        a.currentTime = 0;
+        a.onended = null;
+      });
+      if (raf) cancelAnimationFrame(raf);
+    }
+
+    function updateTime() {
+      const a = audioNodes[index];
+      els.timeLabel.textContent = `${formatTime(a.currentTime)} / ${formatTime(a.duration || 0)}`;
+      if (playing) raf = requestAnimationFrame(updateTime);
+    }
+
+    function playFrom(i) {
+      stopAllAudio();
+      renderSlide(i);
+      playing = true;
+      els.playBtn.textContent = "Пауза";
+      const a = audioNodes[i];
+      a.onended = () => {
+        if (i < slides.length - 1) playFrom(i + 1);
+        else {
+          playing = false;
+          els.playBtn.textContent = "Ещё раз";
+        }
+      };
+      a.play().catch(() => {
+        playing = false;
+        els.playBtn.textContent = "Смотреть урок";
+      });
+      updateTime();
+    }
+
+    function togglePlay() {
+      const a = audioNodes[index];
+      if (playing) {
+        a.pause();
+        playing = false;
+        els.playBtn.textContent = "Продолжить";
+        if (raf) cancelAnimationFrame(raf);
+        return;
+      }
+      if (a.currentTime > 0 && a.currentTime < (a.duration || 0) - 0.15) {
+        playing = true;
+        els.playBtn.textContent = "Пауза";
+        a.onended = () => {
+          if (index < slides.length - 1) playFrom(index + 1);
+          else {
+            playing = false;
+            els.playBtn.textContent = "Ещё раз";
+          }
+        };
+        a.play();
+        updateTime();
+        return;
+      }
+      playFrom(index === slides.length - 1 && a.ended ? 0 : index);
+    }
+
+    function jumpTo(i) {
+      if (playing) playFrom(i);
+      else {
+        stopAllAudio();
+        renderSlide(i);
+        els.playBtn.textContent = "Смотреть урок";
+      }
+    }
+
+    els.playBtn.addEventListener("click", togglePlay);
+    els.prevBtn.addEventListener("click", () => jumpTo(Math.max(0, index - 1)));
+    els.nextBtn.addEventListener("click", () => jumpTo(Math.min(slides.length - 1, index + 1)));
+
+    const params = new URLSearchParams(location.search);
+    const startSlide = Math.max(0, Math.min(slides.length - 1, Number(params.get("slide") || 0)));
+    renderSlide(startSlide);
+    if (params.get("autoplay") === "1") {
+      // slight delay so fonts/audio can warm up before recording
+      setTimeout(() => playFrom(startSlide), 700);
+    }
+  </script>
+</body>
+</html>
